@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:insta_x/firebase_options.dart';
+import 'package:insta_x/screens/login_screen/bloc/login_bloc.dart';
 import 'package:insta_x/screens/splash_screen/bloc/splash_bloc.dart';
 import 'package:insta_x/screens/splash_screen/splash_screen.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(providers: [Provider(create: (context) => SplashBloc(),)],
+    return MultiProvider(providers: [Provider(create: (context) => SplashBloc(),
+    ),Provider(create: (context) => LoginBloc(),)],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Insta_x',

@@ -5,8 +5,8 @@ import 'package:insta_x/screens/home_page/home_page.dart';
 import 'package:insta_x/utils/mediaquery.dart';
 import 'package:insta_x/utils/page_transation.dart';
 
-class CommonButton extends StatelessWidget {
-  const CommonButton({
+class CreateButton extends StatelessWidget {
+  const CreateButton({
     super.key,required this.title,required this.textClr,required this.backgroundClr,required this.onTap,
   });
   final Color backgroundClr;

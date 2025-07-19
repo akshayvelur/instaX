@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:insta_x/screens/home_page/home_page.dart';
 import 'package:insta_x/screens/login_screen/login_screen.dart';
 import 'package:insta_x/screens/splash_screen/bloc/splash_bloc.dart';
 import 'package:insta_x/utils/mediaquery.dart';
@@ -28,6 +29,9 @@ class _SplashScreenState extends State<SplashScreen> {
       listener: (context, state) {
         if( state is SplashState){
           Navigator.push(context, FadeTransitionPageRoute(child:LoginScreen() ));
+        }
+         if( state is AlreadyloggedState){
+          Navigator.push(context, FadeTransitionPageRoute(child:HomePage() ));
         }
         // TODO: implement listener
       },

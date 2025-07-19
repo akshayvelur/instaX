@@ -13,7 +13,7 @@ class CommonTextForm extends StatelessWidget {
       padding: const EdgeInsets.only(top: 20,),
       child: TextFormField(
         controller:controllers ,
-        decoration: InputDecoration(hintText: hint,
+        decoration: InputDecoration(hintText: hint,labelText: hint,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),

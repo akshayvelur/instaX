@@ -7,3 +7,6 @@ final class SplashInitial extends SplashState {}
 class LoadingState extends SplashState{
   
 }
+class AlreadyloggedState extends SplashState{
+  
+}

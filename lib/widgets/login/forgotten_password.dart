@@ -10,7 +10,7 @@ class Forgotten extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 20,bottom: 90),
       child: Text("Forgotten password?",style: GoogleFonts.roboto(fontSize: 16),),
     );
   }
