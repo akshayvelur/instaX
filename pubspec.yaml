@@ -42,6 +42,13 @@ dependencies:
   firebase_storage: ^12.4.9
   firebase_database: ^11.3.9
   google_fonts: ^6.2.1
+  cloud_firestore: ^5.6.11
+  cached_network_image: ^3.4.1
+  supabase: ^2.8.0
+  supabase_flutter: ^2.9.1
+  image_picker: ^1.1.2
+  lottie: ^3.3.1
+  intl: ^0.20.2
 
 dev_dependencies:
   flutter_test:

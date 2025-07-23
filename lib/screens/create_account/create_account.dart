@@ -15,8 +15,8 @@ import 'package:insta_x/widgets/login/forgotten_password.dart';
 import 'package:insta_x/widgets/login/language.dart';
 import 'package:insta_x/widgets/splash_widget/splash_widget.dart';
 
-class CreateAccount extends StatelessWidget {
-  CreateAccount({super.key});
+class CreateAccountScreen extends StatelessWidget {
+  CreateAccountScreen({super.key});
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordControllr = TextEditingController();
@@ -44,7 +44,7 @@ class CreateAccount extends StatelessWidget {
                   (_) => AlertDialog(
                     backgroundColor: const Color.fromARGB(226, 180, 173, 173),
                     content: Padding(
-                      padding: const EdgeInsets.only(left: 35,top: 35),
+                      padding: const EdgeInsets.only(left: 35, top: 35),
                       child: Text(
                         state.erroring,
                         style: GoogleFonts.roboto(color: Colors.red),
@@ -62,7 +62,7 @@ class CreateAccount extends StatelessWidget {
           // TODO: implement listener
         },
         builder: (context, state) {
-          return Scaffold(
+          return Scaffold(appBar: AppBar(leading: IconButton(onPressed: (){Navigator.pop(context);}, icon:Icon(Icons.arrow_back_ios_new)),),
             body: Padding(
               padding: const EdgeInsets.all(20),
               child: SingleChildScrollView(
@@ -70,7 +70,7 @@ class CreateAccount extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: mediaQueryHeight(.15, context)),
+                    SizedBox(height: mediaQueryHeight(.02, context)),
                     Logo(),
                     CommonTextForm(
                       hint: "User name",
@@ -90,14 +90,16 @@ class CreateAccount extends StatelessWidget {
                       backgroundClr: Colors.white,
                       textClr: Colors.blue,
                       onTap: () {
-                        if(emailController.text.isNotEmpty&&passwordControllr.text.isNotEmpty&&nameController.text.isNotEmpty){
-                        context.read<LoginBloc>().add(
-                          CreateAccoutEvent(
-                            userName: nameController.text,
-                            email: emailController.text,
-                            password: passwordControllr.text,
-                          ),
-                        );
+                        if (emailController.text.isNotEmpty &&
+                            passwordControllr.text.isNotEmpty &&
+                            nameController.text.isNotEmpty) {
+                          context.read<LoginBloc>().add(
+                            CreateAccoutEvent(
+                              userName: nameController.text,
+                              email: emailController.text,
+                              password: passwordControllr.text,
+                            ),
+                          );
                         }
                       },
                     ),

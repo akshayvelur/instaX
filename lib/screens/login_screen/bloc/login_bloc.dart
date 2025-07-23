@@ -67,6 +67,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         password:event. password.trim(),
       );
       if(auth.currentUser!.uid.isNotEmpty){
+        createUser(event.userName);
      emit(CreateAccountState());
       }
       

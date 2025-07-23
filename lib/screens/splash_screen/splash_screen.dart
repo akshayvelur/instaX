@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:insta_x/screens/bottom_navigator/bottom_navigator.dart';
 import 'package:insta_x/screens/home_page/home_page.dart';
 import 'package:insta_x/screens/login_screen/login_screen.dart';
 import 'package:insta_x/screens/splash_screen/bloc/splash_bloc.dart';
+import 'package:insta_x/services/authentication.dart';
 import 'package:insta_x/utils/mediaquery.dart';
 import 'package:insta_x/utils/page_transation.dart';
 import 'package:insta_x/widgets/splash_widget/meta_logo.dart';
@@ -28,10 +30,11 @@ class _SplashScreenState extends State<SplashScreen> {
     return BlocListener<SplashBloc, SplashState>(
       listener: (context, state) {
         if( state is SplashState){
-          Navigator.push(context, FadeTransitionPageRoute(child:LoginScreen() ));
+          Navigator.pushReplacement(context, FadeTransitionPageRoute(child:LoginScreen() ));
         }
          if( state is AlreadyloggedState){
-          Navigator.push(context, FadeTransitionPageRoute(child:HomePage() ));
+          
+          Navigator.pushReplacement(context, FadeTransitionPageRoute(child:BottomNavigate() ));
         }
         // TODO: implement listener
       },

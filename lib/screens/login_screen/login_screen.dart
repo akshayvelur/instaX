@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:insta_x/screens/bottom_navigator/bottom_navigator.dart';
 import 'package:insta_x/screens/create_account/create_account.dart';
 
 import 'package:insta_x/screens/home_page/home_page.dart';
@@ -53,16 +54,16 @@ class LoginScreen extends StatelessWidget {
                   ),
             );
           }
-          if (state is CreateAccountState) {
+          if (state is LoginAccountState) {
             Navigator.pushReplacement(
               context,
-              FadeTransitionPageRoute(child: HomePage()),
+              FadeTransitionPageRoute(child:BottomNavigate()),
             );
           }
           if(state is NavigateTocreateState){
              Navigator.pushReplacement(
               context,
-              FadeTransitionPageRoute(child: CreateAccount()),
+              FadeTransitionPageRoute(child: CreateAccountScreen()),
             );
           }
           // TODO: implement listener
